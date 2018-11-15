@@ -7,10 +7,11 @@ It is configured to be run in conjunction with environments from the
 Note: this codebase has been restructured since the original paper, and the results may
 vary from those reported in the paper.
 
-## Installation
-
-- To install, `cd` into the root directory and type `pip install -e .`
-
+## To Run
+```
+./_install.sh
+./_train.sh
+```
 - Known dependencies: Python (3.5.4), OpenAI gym (0.10.5), tensorflow (1.8.0), numpy (1.14.5)
 
 ## Case study: Multi-Agent Particle Environments
