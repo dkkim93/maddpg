@@ -3,7 +3,6 @@ import numpy as np
 import tensorflow as tf
 import time
 import pickle
-import gym
 import maddpg.common.tf_util as U
 import tensorflow.contrib.layers as layers
 from maddpg.trainer.maddpg import MADDPGAgentTrainer
@@ -85,8 +84,8 @@ def train(arglist):
     with U.single_threaded_session():
         # Create environment
         env = make_env(arglist.scenario, arglist, arglist.benchmark)
-        if not isinstance(env.action_space[0], gym.spaces.discrete.Discrete):
-            raise RuntimeError("Action space is not Discrete object. Check the discrete_action_space flag.")
+        assert env.discrete_action_space is True, "Check flag in environment.py"
+        assert env.discrete_action_input is False, "Check flag in environment.py"
 
         # Create agent trainers
         obs_shape_n = [env.observation_space[i].shape for i in range(env.n)]
