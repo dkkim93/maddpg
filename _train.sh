@@ -23,4 +23,6 @@ export PYTHONPATH=/home/dongki/research/lids/git/2018-meta-marl/thirdparty/multi
 # Train tf 
 print_header "Training network"
 cd $DIR
-python3.6 experiments/train.py
+python3.6 experiments/train.py \
+--scenario simple_spread \
+--max-episode-len 50 \

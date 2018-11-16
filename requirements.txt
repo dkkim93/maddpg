@@ -2,3 +2,4 @@ numpy>=1.14.5
 tensorflow>=1.8.0
 gym[atari]>=0.10.5
 tensorboardX>=1.2
+matplotlib>=2.2.2
